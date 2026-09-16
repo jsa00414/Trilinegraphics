@@ -816,6 +816,10 @@ textarea {
   pointer-events: none;
 }
 
+.admin-frame-empty[hidden] {
+  display: none !important;
+}
+
 .admin-site-list {
   list-style: none;
   margin: 1rem 0 0;
