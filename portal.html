@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact — Triline Graphics</title>
+    <title>Client Portal — Triline Graphics</title>
     <meta
       name="description"
-      content="Start a project with Triline Graphics. Tell us about your brand, launch, or redesign."
+      content="Enter your Triline Graphics client access code to view your project website."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 10h20M6 16h20M6 22h20' stroke='%23D6FF3A' stroke-width='2.5'/%3E%3C/svg%3E" />
   </head>
-  <body data-page="contact">
+  <body data-page="portal">
     <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -30,36 +30,49 @@
       <nav class="nav" aria-label="Primary">
         <a href="work.html">Work</a>
         <a href="craft.html">Craft</a>
-        <a href="portal.html">Portal</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="portal.html" aria-current="page">Portal</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a class="nav-cta" href="contact.html" aria-current="page">Start a project</a>
+      <a class="nav-cta" href="contact.html">Start a project</a>
     </header>
 
     <main>
-      <section class="section contact contact-page">
-        <div class="contact-panel">
-          <p class="brand brand-sm">Triline Graphics</p>
-          <h1>Let’s draw the next line together.</h1>
+      <section class="section portal-page">
+        <div class="portal-panel">
+          <p class="brand brand-sm">Client portal</p>
+          <h1>Enter your access code</h1>
           <p class="lede">
-            Tell us about your brand, launch, or redesign. We reply within two business days.
+            Use the code from your Triline project handoff to open your private website preview.
           </p>
-          <form class="contact-form" action="#" method="post">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" autocomplete="name" required placeholder="Alex Rivera" />
+
+          <form class="portal-form" id="portal-form" novalidate>
+            <label for="access-code">
+              <span>Access code</span>
+              <input
+                id="access-code"
+                name="code"
+                type="text"
+                inputmode="text"
+                autocomplete="one-time-code"
+                spellcheck="false"
+                required
+                placeholder="TRI-XXXX"
+                aria-describedby="portal-status"
+              />
             </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" autocomplete="email" required placeholder="alex@studio.com" />
-            </label>
-            <label class="full">
-              <span>Project</span>
-              <textarea name="project" rows="4" required placeholder="Brand refresh for a product launch this fall…"></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Send inquiry</button>
+            <button class="btn btn-primary" type="submit">View website</button>
           </form>
-          <p class="form-note" hidden data-form-note>Thanks — your inquiry is ready to send. We’ll be in touch soon.</p>
+
+          <p class="portal-status" id="portal-status" role="status" aria-live="polite"></p>
+
+          <div class="portal-hint">
+            <p>Demo codes for review:</p>
+            <ul>
+              <li><code>TRI-NORTH</code> — Northbound Coffee</li>
+              <li><code>TRI-FIELD</code> — Fieldnote Atlas</li>
+              <li><code>TRI-ORBIT</code> — Orbit Labs</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -72,12 +85,13 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="work.html">Work</a>
         <a href="craft.html">Craft</a>
-        <a href="portal.html">Portal</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="portal.html" aria-current="page">Portal</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <p>© <span data-year></span> Triline Graphics. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
+    <script src="portal.js" type="module"></script>
   </body>
 </html>

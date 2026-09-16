@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fieldnote Atlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=Syne:wght@700&family=Sora:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../client.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-client-id="fieldnote">
+    <div class="client-bar">
+      <strong>Triline client preview — Fieldnote Atlas</strong>
+      <div class="client-bar-actions">
+        <a href="../../portal.html">Portal</a>
+        <a class="exit" href="../../portal.html" data-portal-exit>Exit &amp; lock</a>
+      </div>
+    </div>
+
+    <header class="fn-header">
+      <div class="fn-logo">Fieldnote Atlas</div>
+      <nav>
+        <a href="#maps">Maps</a>
+        <a href="#journal">Journal</a>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="fn-hero">
+        <p class="fn-meta">Issue 12 · Coastal routes</p>
+        <h1>Notes from the edge of the map.</h1>
+        <p class="fn-lede">
+          Editorial cartography and field journals for people who still fold paper and chase horizons.
+        </p>
+      </section>
+
+      <section class="fn-grid" id="maps">
+        <article class="fn-card">
+          <span>01</span>
+          <h2>Tide Line Survey</h2>
+          <p>Hand-drawn contours of a shifting shoreline, annotated for walkers.</p>
+        </article>
+        <article class="fn-card">
+          <span>02</span>
+          <h2>Ridge Trail Index</h2>
+          <p>A compact atlas of switchbacks, water sources, and lookout points.</p>
+        </article>
+        <article class="fn-card">
+          <span>03</span>
+          <h2>Harbor Night Chart</h2>
+          <p>Beacon patterns and dock routes for quiet evening crossings.</p>
+        </article>
+      </section>
+
+      <section class="fn-journal" id="journal">
+        <h2>From the journal</h2>
+        <p>
+          “We draw to remember what GPS flattens — the smell of rain on granite, the pause before the
+          switchback, the way a coastline refuses a straight line.”
+        </p>
+      </section>
+
+      <section class="fn-subscribe" id="subscribe">
+        <h2>Get the next issue</h2>
+        <p>Printed quarterly. Ships folded, not flat.</p>
+        <a class="fn-cta" href="mailto:hello@fieldnote.example">Request a sample</a>
+      </section>
+    </main>
+
+    <footer class="fn-footer">
+      <p>Fieldnote Atlas · Client preview by Triline Graphics</p>
+    </footer>
+
+    <script src="../access.js"></script>
+  </body>
+</html>

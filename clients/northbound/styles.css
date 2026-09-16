@@ -1,0 +1,142 @@
+:root {
+  --ink: #1c1410;
+  --paper: #f3ebe1;
+  --accent: #c45a2c;
+  --muted: #6e5d52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(800px 400px at 90% 0%, rgba(196, 90, 44, 0.12), transparent 50%),
+    linear-gradient(180deg, #f7f1ea, var(--paper));
+  font-family: "Manrope", sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+.nb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem clamp(1.25rem, 4vw, 3rem);
+}
+
+.nb-mark {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.nb-header nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.nb-header a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nb-header a:hover {
+  color: var(--ink);
+}
+
+.nb-hero {
+  padding: clamp(3rem, 10vw, 6rem) clamp(1.25rem, 4vw, 3rem) 3rem;
+  max-width: 40rem;
+}
+
+.nb-kicker {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nb-hero h1 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.nb-lede {
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  max-width: 30ch;
+  font-size: 1.05rem;
+}
+
+.nb-cta {
+  display: inline-flex;
+  margin-top: 1.75rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nb-section {
+  padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
+  border-top: 1px solid rgba(28, 20, 16, 0.12);
+}
+
+.nb-section h2 {
+  margin: 0 0 1.25rem;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.nb-roast {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(28, 20, 16, 0.1);
+}
+
+.nb-roast h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.nb-roast p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.nb-price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nb-story {
+  background: rgba(196, 90, 44, 0.08);
+}
+
+.nb-story p {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.nb-footer {
+  padding: 2rem clamp(1.25rem, 4vw, 3rem);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
