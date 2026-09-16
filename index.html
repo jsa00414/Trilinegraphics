@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triline Graphics</title>
+    <meta
+      name="description"
+      content="Triline Graphics — brand systems, visual identity, and print-ready design with sharp lines and lasting clarity."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 10h20M6 16h20M6 22h20' stroke='%23D6FF3A' stroke-width='2.5'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="Triline Graphics home">
+        <span class="logo-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span class="logo-text">Triline</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#craft">Craft</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Start a project</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-glow"></div>
+          <div class="hero-grid"></div>
+          <svg class="hero-mark" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D6FF3A" />
+                <stop offset="55%" stop-color="#7CF0C4" />
+                <stop offset="100%" stop-color="#4DB8FF" />
+              </linearGradient>
+              <filter id="softBlur">
+                <feGaussianBlur stdDeviation="18" />
+              </filter>
+            </defs>
+            <g class="tri-lines" stroke="url(#lineGrad)" stroke-linecap="square" fill="none">
+              <path class="line line-a" d="M-40 210 L1280 90" stroke-width="28" />
+              <path class="line line-b" d="M-40 390 L1280 310" stroke-width="28" />
+              <path class="line line-c" d="M-40 570 L1280 530" stroke-width="28" />
+            </g>
+            <g filter="url(#softBlur)" opacity="0.35" stroke="url(#lineGrad)" fill="none">
+              <path d="M-40 210 L1280 90" stroke-width="40" />
+              <path d="M-40 390 L1280 310" stroke-width="40" />
+              <path d="M-40 570 L1280 530" stroke-width="40" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="hero-copy">
+          <p class="brand">Triline Graphics</p>
+          <h1>Sharp identity, drawn in three strokes.</h1>
+          <p class="lede">
+            We build brand systems, packaging, and campaign visuals that feel precise, memorable, and ready for print or screen.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Book a discovery call</a>
+            <a class="btn btn-ghost" href="#work">View selected work</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>Identity systems and visual languages for studios, makers, and product brands.</p>
+        </div>
+
+        <div class="work-rail" role="list">
+          <article class="work-item" role="listitem" style="--i: 0">
+            <div class="work-media media-a" aria-hidden="true">
+              <span class="work-lines"><i></i><i></i><i></i></span>
+            </div>
+            <div class="work-meta">
+              <h3>Northbound Coffee</h3>
+              <p>Packaging system &amp; store graphics</p>
+            </div>
+          </article>
+          <article class="work-item" role="listitem" style="--i: 1">
+            <div class="work-media media-b" aria-hidden="true">
+              <span class="work-lines"><i></i><i></i><i></i></span>
+            </div>
+            <div class="work-meta">
+              <h3>Fieldnote Atlas</h3>
+              <p>Editorial brand &amp; map language</p>
+            </div>
+          </article>
+          <article class="work-item" role="listitem" style="--i: 2">
+            <div class="work-media media-c" aria-hidden="true">
+              <span class="work-lines"><i></i><i></i><i></i></span>
+            </div>
+            <div class="work-meta">
+              <h3>Orbit Labs</h3>
+              <p>Product identity &amp; motion kit</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section craft" id="craft">
+        <div class="section-head">
+          <h2>How we craft</h2>
+          <p>A tight process that keeps the mark, the system, and the production path aligned.</p>
+        </div>
+
+        <ol class="process">
+          <li class="process-step">
+            <span class="step-index">01</span>
+            <div>
+              <h3>Signal</h3>
+              <p>Define the one idea the brand must say before any line is drawn.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="step-index">02</span>
+            <div>
+              <h3>Structure</h3>
+              <p>Build a grid, type stack, and color logic that holds across every surface.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="step-index">03</span>
+            <div>
+              <h3>Strike</h3>
+              <p>Ship print-ready files, motion specs, and guidelines teams can actually use.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-panel">
+          <p class="brand brand-sm">Triline Graphics</p>
+          <h2>Let’s draw the next line together.</h2>
+          <p class="lede">
+            Tell us about your brand, launch, or redesign. We reply within two business days.
+          </p>
+          <form class="contact-form" action="#" method="post">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Alex Rivera" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="alex@studio.com" />
+            </label>
+            <label class="full">
+              <span>Project</span>
+              <textarea name="project" rows="4" required placeholder="Brand refresh for a product launch this fall…"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send inquiry</button>
+          </form>
+          <p class="form-note" hidden data-form-note>Thanks — your inquiry is ready to send. We’ll be in touch soon.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Triline Graphics</span>
+      </div>
+      <p>© <span data-year></span> Triline Graphics. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
