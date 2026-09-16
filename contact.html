@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Triline Graphics</title>
+    <meta
+      name="description"
+      content="Start a website project with Triline Graphics. Tell us about your launch or redesign."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 10h20M6 16h20M6 22h20' stroke='%23D6FF3A' stroke-width='2.5'/%3E%3C/svg%3E" />
+  </head>
+  <body data-page="contact">
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Triline Graphics home">
+        <span class="logo-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span class="logo-text">Triline</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="portal.html">Portal</a>
+        <a href="admin.html">Admin</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="nav-cta" href="contact.html" aria-current="page">Start a project</a>
+    </header>
+
+    <main>
+      <section class="section contact contact-page">
+        <div class="contact-panel">
+          <p class="brand brand-sm">Triline Graphics</p>
+          <h1>Let’s build your next website.</h1>
+          <p class="lede">
+            Tell us about the site you need. We reply within two business days.
+          </p>
+          <form class="contact-form" action="#" method="post">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Alex Rivera" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="alex@studio.com" />
+            </label>
+            <label class="full">
+              <span>Website project</span>
+              <textarea name="project" rows="4" required placeholder="New marketing website for a product launch this fall…"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send inquiry</button>
+          </form>
+          <p class="form-note" hidden data-form-note>Thanks — your inquiry is ready to send. We’ll be in touch soon.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="index.html">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Triline Graphics</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="portal.html">Portal</a>
+        <a href="admin.html">Admin</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <p>© <span data-year></span> Triline Graphics. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
