@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Triline Graphics</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 10h20M6 16h20M6 22h20' stroke='%23D6FF3A' stroke-width='2.5'/%3E%3C/svg%3E" />
+  </head>
+  <body data-page="admin">
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Triline Graphics home">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="logo-text">Triline</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="portal.html">Portal</a>
+        <a href="admin.html" aria-current="page">Admin</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-cta" type="button" id="logout-btn" hidden>Log out</button>
+    </header>
+
+    <main>
+      <section class="section admin-page">
+        <div class="admin-shell">
+          <div class="admin-panel" id="login-panel">
+            <p class="brand brand-sm">Admin</p>
+            <h1>Host a client website</h1>
+            <p class="lede">Sign in to upload a .zip site, serve it on a local port, and preview it in an iframe.</p>
+            <form class="admin-form" id="login-form">
+              <label>
+                <span>Password</span>
+                <input type="password" name="password" id="admin-password" required autocomplete="current-password" placeholder="••••••••" />
+              </label>
+              <button class="btn btn-primary" type="submit">Enter admin</button>
+            </form>
+            <p class="admin-status" id="login-status" role="status" aria-live="polite"></p>
+            <p class="admin-hint">Default password: <code>triline-admin</code></p>
+          </div>
+
+          <div class="admin-workspace" id="admin-workspace" hidden>
+            <div class="admin-panel">
+              <p class="brand brand-sm">Upload</p>
+              <h1>Launch on a local port</h1>
+              <p class="lede">Upload a static website zip with an <code>index.html</code>. We’ll host it on localhost and embed the preview below.</p>
+
+              <form class="admin-form" id="upload-form">
+                <label>
+                  <span>Site name</span>
+                  <input type="text" name="name" id="site-name" placeholder="Acme Launch Site" />
+                </label>
+                <label>
+                  <span>Website zip</span>
+                  <input type="file" name="website" id="site-file" accept=".zip,application/zip" required />
+                </label>
+                <button class="btn btn-primary" type="submit">Upload &amp; host</button>
+              </form>
+              <p class="admin-status" id="upload-status" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="admin-panel admin-preview-panel">
+              <div class="admin-preview-head">
+                <div>
+                  <p class="brand brand-sm">Live iframe</p>
+                  <h2 id="preview-title">No site selected</h2>
+                  <p class="admin-meta" id="preview-meta">Upload a zip to start hosting.</p>
+                </div>
+                <div class="admin-preview-actions">
+                  <a class="btn btn-ghost" id="open-local" href="#" target="_blank" rel="noopener" hidden>Open local port</a>
+                  <button class="btn btn-ghost" type="button" id="stop-site" hidden>Stop host</button>
+                </div>
+              </div>
+              <div class="admin-frame-wrap">
+                <iframe id="preview-frame" title="Hosted website preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+                <p class="admin-frame-empty" id="preview-empty">Hosted site preview will appear here.</p>
+              </div>
+            </div>
+
+            <div class="admin-panel">
+              <h2>Active hosts</h2>
+              <ul class="admin-site-list" id="site-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="index.html">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Triline Graphics</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="portal.html">Portal</a>
+        <a href="admin.html" aria-current="page">Admin</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p>© <span data-year></span> Triline Graphics. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

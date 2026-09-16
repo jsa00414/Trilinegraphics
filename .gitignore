@@ -1,0 +1,5 @@
+node_modules/
+hosted/
+uploads/
+*.log
+.DS_Store
