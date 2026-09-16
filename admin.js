@@ -14,6 +14,10 @@ const previewMeta = document.getElementById("preview-meta");
 const openLocal = document.getElementById("open-local");
 const stopSiteBtn = document.getElementById("stop-site");
 const logoutBtn = document.getElementById("logout-btn");
+const codeBox = document.getElementById("code-box");
+const accessCodeDisplay = document.getElementById("access-code-display");
+const copyCodeBtn = document.getElementById("copy-code");
+const regenCodeBtn = document.getElementById("regen-code");
 
 let token = localStorage.getItem(TOKEN_KEY) || "";
 let selectedId = "";
@@ -65,6 +69,7 @@ function showLoggedOut() {
   logoutBtn.hidden = true;
   previewFrame.removeAttribute("src");
   previewEmpty.hidden = false;
+  codeBox.hidden = true;
 }
 
 function showLoggedIn() {
@@ -86,10 +91,11 @@ function renderSites() {
     li.innerHTML = `
       <div>
         <strong>${escapeHtml(site.name)}</strong>
-        <p>Port ${site.port} · <code>${escapeHtml(site.localUrl)}</code></p>
+        <p>Port ${site.port} · code <code>${escapeHtml(site.accessCode || "—")}</code></p>
       </div>
       <div class="admin-site-actions">
         <button type="button" data-preview="${site.id}">Preview</button>
+        <button type="button" data-copy="${site.id}">Copy code</button>
         <button type="button" data-stop="${site.id}">Stop</button>
       </div>
     `;
@@ -105,6 +111,16 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+async function copyText(value) {
+  if (!value) return;
+  try {
+    await navigator.clipboard.writeText(value);
+    setStatus(uploadStatus, `Copied access code ${value}`, "is-success");
+  } catch (_error) {
+    setStatus(uploadStatus, `Access code: ${value}`, "is-success");
+  }
+}
+
 function selectSite(id) {
   const site = sites.find((item) => item.id === id);
   selectedId = id;
@@ -117,16 +133,23 @@ function selectSite(id) {
     previewEmpty.hidden = false;
     openLocal.hidden = true;
     stopSiteBtn.hidden = true;
+    copyCodeBtn.hidden = true;
+    regenCodeBtn.hidden = true;
+    codeBox.hidden = true;
     return;
   }
 
   previewTitle.textContent = site.name;
-  previewMeta.textContent = `Hosted on ${site.localUrl} · iframe via ${site.iframeUrl}`;
+  previewMeta.textContent = `Hosted on ${site.localUrl} · clients unlock at Portal with the access code below`;
   previewFrame.src = site.iframeUrl;
   previewEmpty.hidden = true;
   openLocal.hidden = false;
   openLocal.href = site.localUrl;
   stopSiteBtn.hidden = false;
+  copyCodeBtn.hidden = false;
+  regenCodeBtn.hidden = false;
+  codeBox.hidden = false;
+  accessCodeDisplay.textContent = site.accessCode || "—";
 }
 
 async function refreshSites(selectId) {
@@ -177,6 +200,7 @@ uploadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const fileInput = document.getElementById("site-file");
   const nameInput = document.getElementById("site-name");
+  const codeInput = document.getElementById("access-code-input");
   if (!fileInput.files.length) {
     setStatus(uploadStatus, "Choose a .zip file first.", "is-error");
     return;
@@ -185,8 +209,9 @@ uploadForm.addEventListener("submit", async (event) => {
   const body = new FormData();
   body.append("website", fileInput.files[0]);
   body.append("name", nameInput.value.trim());
+  if (codeInput.value.trim()) body.append("accessCode", codeInput.value.trim());
 
-  setStatus(uploadStatus, "Uploading and starting local host…");
+  setStatus(uploadStatus, "Uploading, hosting, and generating access code…");
   try {
     const data = await fetch("/api/admin/upload", {
       method: "POST",
@@ -200,7 +225,7 @@ uploadForm.addEventListener("submit", async (event) => {
 
     setStatus(
       uploadStatus,
-      `Hosted “${data.site.name}” on port ${data.site.port}.`,
+      `Hosted “${data.site.name}” on port ${data.site.port}. Client code: ${data.site.accessCode}`,
       "is-success"
     );
     uploadForm.reset();
@@ -219,6 +244,12 @@ siteList.addEventListener("click", async (event) => {
     return;
   }
 
+  if (button.dataset.copy) {
+    const site = sites.find((item) => item.id === button.dataset.copy);
+    if (site) await copyText(site.accessCode);
+    return;
+  }
+
   if (button.dataset.stop) {
     const id = button.dataset.stop;
     try {
@@ -229,6 +260,26 @@ siteList.addEventListener("click", async (event) => {
     } catch (error) {
       setStatus(uploadStatus, error.message, "is-error");
     }
+  }
+});
+
+copyCodeBtn.addEventListener("click", async () => {
+  const site = sites.find((item) => item.id === selectedId);
+  if (site) await copyText(site.accessCode);
+});
+
+regenCodeBtn.addEventListener("click", async () => {
+  if (!selectedId) return;
+  try {
+    const data = await api(`/api/admin/sites/${selectedId}/code`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({}),
+    });
+    await refreshSites(data.site.id);
+    setStatus(uploadStatus, `New access code: ${data.site.accessCode}`, "is-success");
+  } catch (error) {
+    setStatus(uploadStatus, error.message, "is-error");
   }
 });
 

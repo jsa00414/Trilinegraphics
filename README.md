@@ -30,8 +30,11 @@ Optional env vars:
 
 1. Open `/admin.html` and sign in with the admin password
 2. Upload a static website `.zip` that contains `index.html`
-3. The server hosts it on `127.0.0.1:<port>` and shows it in an iframe on the admin page
-4. Use **Open local port** for a direct tab, or **Stop** to shut the host down
+3. The server hosts it on `127.0.0.1:<port>`, generates a client access code, and shows an iframe preview
+4. Share the access code so the client can open the site at `/portal.html`
+5. Use **New code** to regenerate, **Copy code** to share, or **Stop** to shut the host down
+
+Optional: set a custom access code on upload (format `TRI-XXXX`).
 
 ## Client portal
 
@@ -44,3 +47,5 @@ Demo codes:
 | `TRI-NORTH` | Northbound Coffee |
 | `TRI-FIELD` | Fieldnote Atlas |
 | `TRI-ORBIT` | Orbit Labs |
+
+Uploaded hosts use auto-generated codes like `TRI-A7K2M9` shown in Admin.

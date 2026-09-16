@@ -62,6 +62,10 @@
                   <input type="text" name="name" id="site-name" placeholder="Acme Launch Site" />
                 </label>
                 <label>
+                  <span>Access code (optional)</span>
+                  <input type="text" name="accessCode" id="access-code-input" placeholder="Leave blank to auto-generate TRI-XXXXXX" spellcheck="false" />
+                </label>
+                <label>
                   <span>Website zip</span>
                   <input type="file" name="website" id="site-file" accept=".zip,application/zip" required />
                 </label>
@@ -79,8 +83,18 @@
                 </div>
                 <div class="admin-preview-actions">
                   <a class="btn btn-ghost" id="open-local" href="#" target="_blank" rel="noopener" hidden>Open local port</a>
+                  <button class="btn btn-ghost" type="button" id="copy-code" hidden>Copy code</button>
+                  <button class="btn btn-ghost" type="button" id="regen-code" hidden>New code</button>
                   <button class="btn btn-ghost" type="button" id="stop-site" hidden>Stop host</button>
                 </div>
+              </div>
+              <div class="admin-code-box" id="code-box" hidden>
+                <div>
+                  <p class="admin-code-label">Client access code</p>
+                  <p class="admin-code-value" id="access-code-display">—</p>
+                  <p class="admin-meta" id="code-help">Share this code so the client can open the site at Portal.</p>
+                </div>
+                <a class="btn btn-primary" id="open-portal" href="portal.html" target="_blank" rel="noopener">Open portal</a>
               </div>
               <div class="admin-frame-wrap">
                 <iframe id="preview-frame" title="Hosted website preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
