@@ -1,10 +1,15 @@
 # Triline Graphics
 
-Marketing site for **Triline Graphics** — a brand and visual identity studio.
+Multi-page marketing site for **Triline Graphics** — a brand and visual identity studio.
+
+## Pages
+
+- `index.html` — Home
+- `work.html` — Selected work
+- `craft.html` — Process / craft
+- `contact.html` — Project inquiry
 
 ## Run locally
-
-Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 4173

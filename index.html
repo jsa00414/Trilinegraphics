@@ -17,25 +17,25 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0D10'/%3E%3Cpath d='M6 10h20M6 16h20M6 22h20' stroke='%23D6FF3A' stroke-width='2.5'/%3E%3C/svg%3E" />
   </head>
-  <body>
+  <body data-page="home">
     <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Triline Graphics home">
+      <a class="logo" href="index.html" aria-label="Triline Graphics home">
         <span class="logo-mark" aria-hidden="true">
           <i></i><i></i><i></i>
         </span>
         <span class="logo-text">Triline</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#craft">Craft</a>
-        <a href="#contact">Contact</a>
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a class="nav-cta" href="#contact">Start a project</a>
+      <a class="nav-cta" href="contact.html">Start a project</a>
     </header>
 
-    <main id="top">
+    <main>
       <section class="hero" aria-label="Introduction">
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-glow"></div>
@@ -71,112 +71,23 @@
             We build brand systems, packaging, and campaign visuals that feel precise, memorable, and ready for print or screen.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Book a discovery call</a>
-            <a class="btn btn-ghost" href="#work">View selected work</a>
+            <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+            <a class="btn btn-ghost" href="work.html">View selected work</a>
           </div>
-        </div>
-      </section>
-
-      <section class="section work" id="work">
-        <div class="section-head">
-          <h2>Selected work</h2>
-          <p>Identity systems and visual languages for studios, makers, and product brands.</p>
-        </div>
-
-        <div class="work-rail" role="list">
-          <article class="work-item" role="listitem" style="--i: 0">
-            <div class="work-media media-a" aria-hidden="true">
-              <span class="work-lines"><i></i><i></i><i></i></span>
-            </div>
-            <div class="work-meta">
-              <h3>Northbound Coffee</h3>
-              <p>Packaging system &amp; store graphics</p>
-            </div>
-          </article>
-          <article class="work-item" role="listitem" style="--i: 1">
-            <div class="work-media media-b" aria-hidden="true">
-              <span class="work-lines"><i></i><i></i><i></i></span>
-            </div>
-            <div class="work-meta">
-              <h3>Fieldnote Atlas</h3>
-              <p>Editorial brand &amp; map language</p>
-            </div>
-          </article>
-          <article class="work-item" role="listitem" style="--i: 2">
-            <div class="work-media media-c" aria-hidden="true">
-              <span class="work-lines"><i></i><i></i><i></i></span>
-            </div>
-            <div class="work-meta">
-              <h3>Orbit Labs</h3>
-              <p>Product identity &amp; motion kit</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section craft" id="craft">
-        <div class="section-head">
-          <h2>How we craft</h2>
-          <p>A tight process that keeps the mark, the system, and the production path aligned.</p>
-        </div>
-
-        <ol class="process">
-          <li class="process-step">
-            <span class="step-index">01</span>
-            <div>
-              <h3>Signal</h3>
-              <p>Define the one idea the brand must say before any line is drawn.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-index">02</span>
-            <div>
-              <h3>Structure</h3>
-              <p>Build a grid, type stack, and color logic that holds across every surface.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-index">03</span>
-            <div>
-              <h3>Strike</h3>
-              <p>Ship print-ready files, motion specs, and guidelines teams can actually use.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section contact" id="contact">
-        <div class="contact-panel">
-          <p class="brand brand-sm">Triline Graphics</p>
-          <h2>Let’s draw the next line together.</h2>
-          <p class="lede">
-            Tell us about your brand, launch, or redesign. We reply within two business days.
-          </p>
-          <form class="contact-form" action="#" method="post">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" autocomplete="name" required placeholder="Alex Rivera" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" autocomplete="email" required placeholder="alex@studio.com" />
-            </label>
-            <label class="full">
-              <span>Project</span>
-              <textarea name="project" rows="4" required placeholder="Brand refresh for a product launch this fall…"></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Send inquiry</button>
-          </form>
-          <p class="form-note" hidden data-form-note>Thanks — your inquiry is ready to send. We’ll be in touch soon.</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-brand">
+      <a class="footer-brand" href="index.html">
         <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
         <span>Triline Graphics</span>
-      </div>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="work.html">Work</a>
+        <a href="craft.html">Craft</a>
+        <a href="contact.html">Contact</a>
+      </nav>
       <p>© <span data-year></span> Triline Graphics. All rights reserved.</p>
     </footer>
 

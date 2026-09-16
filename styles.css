@@ -146,12 +146,14 @@ textarea {
 }
 
 .nav a:hover,
-.nav a:focus-visible {
+.nav a:focus-visible,
+.nav a[aria-current="page"] {
   color: var(--ink);
 }
 
 .nav a:hover::after,
-.nav a:focus-visible::after {
+.nav a:focus-visible::after,
+.nav a[aria-current="page"]::after {
   transform: scaleX(1);
 }
 
@@ -257,7 +259,10 @@ textarea {
 }
 
 .hero h1,
+.page-hero h1,
 .section-head h2,
+.page-cta h2,
+.contact-panel h1,
 .contact-panel h2 {
   margin: 0;
   font-family: var(--font-display);
@@ -271,6 +276,35 @@ textarea {
   font-size: clamp(1.45rem, 3.4vw, 2.15rem);
   max-width: 22ch;
   color: rgba(244, 241, 234, 0.92);
+}
+
+.page-hero {
+  padding: 8rem var(--pad) 1.5rem;
+  max-width: 42rem;
+  animation: riseIn 0.9s var(--ease) both;
+}
+
+.page-kicker {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.page-cta {
+  border-top: 1px solid var(--line);
+}
+
+.page-cta .lede {
+  margin-top: 0.85rem;
 }
 
 .lede {
@@ -337,6 +371,8 @@ textarea {
 }
 
 .section-head h2,
+.page-cta h2,
+.contact-panel h1,
 .contact-panel h2 {
   font-size: clamp(2rem, 5vw, 3.25rem);
 }
@@ -397,6 +433,24 @@ textarea {
     linear-gradient(110deg, #18201c, #101418 58%);
 }
 
+.media-d {
+  background:
+    linear-gradient(120deg, rgba(214, 255, 58, 0.14), transparent 48%),
+    linear-gradient(210deg, #1a1620, #0f1216 60%);
+}
+
+.media-e {
+  background:
+    linear-gradient(30deg, rgba(77, 184, 255, 0.16), transparent 50%),
+    linear-gradient(160deg, #121a22, #0c1014 58%);
+}
+
+.media-f {
+  background:
+    linear-gradient(250deg, rgba(124, 240, 196, 0.15), transparent 46%),
+    linear-gradient(80deg, #161c18, #0e1210 55%);
+}
+
 .work-lines {
   position: absolute;
   inset: 18% 12%;
@@ -417,15 +471,26 @@ textarea {
   background: linear-gradient(90deg, var(--accent-3), var(--accent-2), var(--accent));
 }
 
-.work-item:nth-child(3) .work-lines i {
+.work-item:nth-child(3) .work-lines i,
+.work-item:nth-child(6) .work-lines i {
   background: linear-gradient(90deg, var(--accent-2), var(--accent), var(--accent-3));
 }
 
+.work-item:nth-child(4) .work-lines i {
+  background: linear-gradient(90deg, var(--accent), var(--accent-3), var(--accent-2));
+}
+
+.work-item:nth-child(5) .work-lines i {
+  background: linear-gradient(90deg, var(--accent-3), var(--accent), var(--accent-2));
+}
+
+.work-meta h2,
 .work-meta h3 {
   margin: 0;
   font-family: var(--font-display);
   font-size: 1.35rem;
   letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 .work-meta p {
@@ -469,11 +534,13 @@ textarea {
   padding-top: 0.15rem;
 }
 
+.process-step h2,
 .process-step h3 {
   margin: 0;
   font-family: var(--font-display);
   font-size: 1.4rem;
   letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 .process-step p {
@@ -482,8 +549,9 @@ textarea {
   max-width: 40ch;
 }
 
-.contact {
-  padding-top: 0;
+.contact-page {
+  padding-top: 7rem;
+  min-height: calc(100svh - 6rem);
 }
 
 .contact-panel {
@@ -493,6 +561,7 @@ textarea {
   background:
     linear-gradient(145deg, rgba(214, 255, 58, 0.06), transparent 35%),
     linear-gradient(180deg, rgba(20, 23, 28, 0.95), rgba(11, 13, 16, 0.8));
+  animation: riseIn 0.9s var(--ease) both;
 }
 
 .contact-form {
@@ -561,6 +630,16 @@ textarea {
   letter-spacing: -0.02em;
 }
 
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.35rem;
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
 @keyframes drawLine {
   to {
     stroke-dashoffset: 0;
@@ -606,6 +685,10 @@ textarea {
   .work-rail {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  .section.work {
+    padding-top: 2rem;
   }
 
   .contact-form {
